@@ -1,0 +1,232 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.text {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+}
+
+.wrapper {
+  max-width: 50%;
+  margin: 0 auto;
+}
+
+.todo {
+  width: 100%;
+  height: 100%;
+}
+
+.todo__priority {
+
+}
+
+.priority {
+
+}
+
+.priority__name {
+  margin: 15px 0;
+  text-align: center;
+}
+
+.input {
+  position: relative;
+  width: 100%;
+}
+
+.input__type {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 45px;
+  padding: 0 30px 0 10px;
+  border: 1px solid #989898;
+  border-radius: 6px;
+}
+
+.input__add {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 15px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.input__add::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  top: 8px;
+  left: 0;
+  background-color: #989898;
+}
+
+.input__add::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  top: 8px;
+  left: 0;
+  transform: rotate(90deg);
+  background-color: #989898;
+}
+
+.tasks {
+}
+
+.task {
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  width: 100%;
+  min-height: 45px;
+  padding: 0 10px;
+  margin-top: 5px;
+  border: 1px solid #989898;
+  border-radius: 6px;
+}
+
+.task__checkbox {
+  display: block;
+  position: relative;
+  width: 22px;
+  height: 22px;
+  margin: auto 0;
+  cursor: pointer;
+}
+
+.checkbox {
+  /* visibility: hidden;
+  height: 100%;
+  width: 100%; */
+  cursor: pointer;
+}
+
+.checkbox::before {
+  content: '';
+  z-index: 100;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 16px;
+  height: 16px;
+  background-color: inherit;
+  border: none;
+  border-radius: 50%;
+}
+
+.checkbox::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background-color: #FFFFFF;
+  border: 1px solid #989898;
+  border-radius: 50%;
+}
+
+.checkbox:checked::before {
+  background-color: #989898;
+}
+
+/* .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background-color: #FFFFFF;
+  border: 1px solid #989898;
+  border-radius: 50%;
+} */
+
+.task__text {
+  width: 100%;
+  margin: auto 10px;
+  padding: 10px 0;
+  word-wrap: break-word;
+}
+
+.task__delete {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 15px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.task__delete::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  top: 8px;
+  left: 0;
+  transform: rotate(-45deg);
+  background-color: #989898;
+}
+
+.task__delete::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  top: 8px;
+  left: 0;
+  transform: rotate(45deg);
+  background-color: #989898;
+}
