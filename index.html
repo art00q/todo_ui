@@ -6,10 +6,74 @@
     <title>Document</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style/style.css">
   </head>
   <body>
-    <script type="text/javascript" src="./script.js"></script>    
+    <section class="todo">
+      <div class="wrapper">
+        <div class="todo__priority">
+          <div class="priority">
+            <p class="priority__name text">
+              HIGH
+            </p>
+            <div class="input">
+              <input type="text" placeholder="Добавить" class="input__type text">
+              <button class="input__add"></button>
+            </div>
+            <div class="tasks">
+              <div class="task">
+                <label class="task__checkbox">
+                  <input type="checkbox" class="checkbox">
+                </label>
+                <p class="task__text text">
+                  Вот вам и супер интересная тема. Вы наверняка заметили что ваши файлы с кодом становятся все объемнее, что хочется вынести некоторые вещи куда-то за пределы основной программы.
+                </p>
+                <span class="task__delete"></span>
+              </div>
+              <div class="task">
+                <label class="task__checkbox">
+                  <input type="checkbox" class="checkbox">
+                </label>
+                <p class="task__text text">
+                  Сверстать этот TODO list
+                </p>
+                <span class="task__delete"></span>
+              </div>
+              <div class="task">
+                <label class="task__checkbox">
+                  <input type="checkbox" class="checkbox">
+                </label>
+                <p class="task__text text">
+                  Сверстать этот TODO list
+                </p>
+                <span class="task__delete"></span>
+              </div>
+            </div>
+          </div>
+          <div class="priority">
+            <p class="priority__name text">
+              LOW
+            </p>
+            <div class="input">
+              <input type="text" placeholder="Добавить" class="input__type text">
+              <button class="input__add"></button>
+            </div>
+            <div class="tasks">
+              <div class="task">
+                <label class="task__checkbox">
+                  <input type="checkbox" class="checkbox">
+                </label>
+                <p class="task__text text">
+                  Сверстать этот TODO list
+                </p>
+                <span class="task__delete"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script type="text/javascript" src="./js/script.js"></script>    
   </body>
 </html>
