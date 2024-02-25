@@ -13,33 +13,15 @@
     <section class="todo">
       <div class="wrapper">
         <div class="todo__priority">
-          <div class="priority">
+          <div class="priority" data-priority="high">
             <p class="priority__name text">
               HIGH
             </p>
-            <div class="input">
+            <form class="input">
               <input type="text" placeholder="Добавить" class="input__type text">
-              <button class="input__add"></button>
-            </div>
+              <button type="submit" class="input__submit"></button>
+            </form>
             <div class="tasks">
-              <div class="task">
-                <label class="task__checkbox">
-                  <input type="checkbox" class="checkbox">
-                </label>
-                <p class="task__text text">
-                  Вот вам и супер интересная тема. Вы наверняка заметили что ваши файлы с кодом становятся все объемнее, что хочется вынести некоторые вещи куда-то за пределы основной программы.
-                </p>
-                <span class="task__delete"></span>
-              </div>
-              <div class="task">
-                <label class="task__checkbox">
-                  <input type="checkbox" class="checkbox">
-                </label>
-                <p class="task__text text">
-                  Сверстать этот TODO list
-                </p>
-                <span class="task__delete"></span>
-              </div>
               <div class="task">
                 <label class="task__checkbox">
                   <input type="checkbox" class="checkbox">
@@ -51,29 +33,20 @@
               </div>
             </div>
           </div>
-          <div class="priority">
+          <div class="priority" data-priority="low">
             <p class="priority__name text">
               LOW
             </p>
-            <div class="input">
+            <form class="input">
               <input type="text" placeholder="Добавить" class="input__type text">
-              <button class="input__add"></button>
-            </div>
+              <button type="submit" class="input__submit"></button>
+            </form>
             <div class="tasks">
-              <div class="task">
-                <label class="task__checkbox">
-                  <input type="checkbox" class="checkbox">
-                </label>
-                <p class="task__text text">
-                  Сверстать этот TODO list
-                </p>
-                <span class="task__delete"></span>
-              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <script type="text/javascript" src="./js/script.js"></script>    
+    <script type="module" src="./js/script.js"></script>    
   </body>
 </html>

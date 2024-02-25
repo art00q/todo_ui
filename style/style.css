@@ -86,7 +86,7 @@ table {
   border-radius: 6px;
 }
 
-.input__add {
+.input__submit {
   position: absolute;
   width: 16px;
   height: 16px;
@@ -97,7 +97,7 @@ table {
   cursor: pointer;
 }
 
-.input__add::before {
+.input__submit::before {
   content: '';
   position: absolute;
   width: 100%;
@@ -107,7 +107,7 @@ table {
   background-color: #989898;
 }
 
-.input__add::after {
+.input__submit::after {
   content: '';
   position: absolute;
   width: 100%;
@@ -119,6 +119,7 @@ table {
 }
 
 .tasks {
+  
 }
 
 .task {
@@ -145,9 +146,6 @@ table {
 }
 
 .checkbox {
-  /* visibility: hidden;
-  height: 100%;
-  width: 100%; */
   cursor: pointer;
 }
 
@@ -180,19 +178,8 @@ table {
   background-color: #989898;
 }
 
-/* .checkmark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 20px;
-  height: 20px;
-  background-color: #FFFFFF;
-  border: 1px solid #989898;
-  border-radius: 50%;
-} */
-
 .task__text {
-  width: 100%;
+  width: calc(100% - 46px);
   margin: auto 10px;
   padding: 10px 0;
   word-wrap: break-word;
@@ -200,8 +187,8 @@ table {
 
 .task__delete {
   position: absolute;
-  width: 16px;
-  height: 16px;
+  width: 15px;
+  height: 15px;
   top: 15px;
   right: 10px;
   background-color: transparent;
