@@ -136,6 +136,10 @@ table {
   border-radius: 6px;
 }
 
+.task__checked {
+  background-color: #F4F4F4;
+}
+
 .task__checkbox {
   display: block;
   position: relative;
