@@ -9,6 +9,7 @@ import {
   deleteTask,
   PRIORITIES,
 } from "./todo_control.js";
+import { checkForEmptyString } from "./helpers.js";
 
 renderTasksList();
 
@@ -18,15 +19,41 @@ UI_ELEMENTS.FORMS.forEach((elem) => {
 
     const taskText = event.target.firstElementChild.value;
     const tasksList = event.target.nextElementSibling;
+    const priority = event.target.parentElement.dataset.priority;
 
-    tasksList.prepend(createUiTask(taskText));
+    if (!checkForEmptyString(taskText)) {
+      tasksList.prepend(createUiTask(taskText));
+      addTask(taskText, priority);
+    }
+    
+    event.target.reset();
   });
 });
 
 UI_ELEMENTS.DELETE_BUTTONS.forEach((elem) => {
   elem.addEventListener('click', (event) => {
+    const taskText = event.target.parentElement.querySelector('.task__text').textContent;
+
     event.target.parentElement.remove();
-    // console.log(event.target.parentElement);
+    deleteTask(taskText);
+  });
+});
+
+UI_ELEMENTS.CHECKBOXES.forEach((elem) => {
+  elem.firstElementChild.addEventListener('click', (event) => {
+    const isChecked = event.target.checked;
+    const tasksList = elem.parentElement.parentElement;
+    const task = elem.parentElement;
+
+    if (isChecked) {
+      task.classList.add('task__checked');
+
+      tasksList.append(task);
+    } else {
+      task.classList.remove('task__checked');
+
+      tasksList.prepend(task);
+    }
   });
 });
 

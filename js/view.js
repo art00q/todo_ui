@@ -1,4 +1,5 @@
 import { 
+  deleteTask,
   list,
   PRIORITIES,
 } from "./todo_control.js";
@@ -9,6 +10,7 @@ const UI_ELEMENTS = {
   TASKS_LIST: document.querySelectorAll('.tasks'),
   PRIORITY_LIST: document.querySelectorAll('[data-priority]'),
   DELETE_BUTTONS: document.querySelectorAll('.task__delete'),
+  CHECKBOXES: document.querySelectorAll('.task__checkbox'),
 };
 
 function createUiTask(text) {
@@ -19,6 +21,19 @@ function createUiTask(text) {
 
   checkboxButton.type = 'checkbox'
   checkboxButton.classList = 'checkbox';
+  checkboxButton.onclick = (event) => {
+    const isChecked = event.target.checked;
+
+    if (isChecked) {
+      task.classList.add('task__checked');
+
+      task.parentElement.append(task);
+    } else {
+      task.classList.remove('task__checked');
+
+      task.parentElement.prepend(task);
+    }
+  }
 
   checkbox.classList = 'task__checkbox';
   checkbox.append(checkboxButton);
@@ -33,6 +48,8 @@ function createUiTask(text) {
   deleteButton.classList = 'task__delete';
   deleteButton.onclick = (event) => {
     event.target.parentElement.remove();
+
+    deleteTask(taskText.textContent);
   }
 
   task.classList = 'task';

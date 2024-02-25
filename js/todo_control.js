@@ -11,11 +11,6 @@ const PRIORITIES = {
   HIGH: 'high',
 };
 
-const VALUE_NAMES = {
-  STATUS: 'status',
-  PRIORITY: 'priority',
-}
-
 const list = [
   {
     id: 1,
@@ -31,24 +26,8 @@ const list = [
   }
 ];
 
-function changeStatus(task, status) {
-  const isGivenStatusNotAvailable = !Object.values(STATUSES).includes(status);
-
-  if (isGivenStatusNotAvailable) {
-    return null
-  }
-
-  list.forEach((_task) => {
-    const isTaskFound = _task.name === task;
-
-    if (isTaskFound) {
-      _task.status = status;
-    }
-  })
-}
-
 function addTask(task, priority) {
-  const lastTaskId = list.splice(list.length, 1).map((_task) => _task.id);
+  const lastTaskId = list[list.length - 1].id + 1;
   const isGivenPriorityExist = Object.values(PRIORITIES).includes(priority);
 
   if (isGivenPriorityExist) {
@@ -75,28 +54,6 @@ function deleteTask(task) {
       break
     }
   }
-}
-
-function showListBy(byValueName) {
-  const variousMeetsToValue = [];
-
-  list.forEach((task) => {
-    const isValueNameNotRepeats = !variousMeetsToValue.includes(task[byValueName]);
-
-    if (isValueNameNotRepeats) {
-      variousMeetsToValue.push(task[byValueName]);
-    };
-  });
-
-  variousMeetsToValue.forEach((value) => {
-    console.log(
-      `${value}:\n${list.map((task) => {
-        if (task[byValueName] === value) {
-          return `\t${task.name},\n`;
-        }
-      }).join('')}`
-    );
-  });
 }
 
 export {
